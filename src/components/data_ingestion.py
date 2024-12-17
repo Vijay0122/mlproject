@@ -1,6 +1,6 @@
 import os 
 import sys
-#from src.exception import CustomException
+from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
 
@@ -57,3 +57,5 @@ class DataIngestion:
 if __name__=="main":
     obj = DataIngestion()
     obj.initiate_data_ingestion()
+
+  
