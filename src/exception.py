@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 # this will give us how a message should look like w.r.t custom exception 
 def error_message_detail(error,error_detail:sys):
@@ -16,19 +16,11 @@ def error_message_detail(error,error_detail:sys):
 
 class CustomException(Exception):
     def _init_(self,error_message,error_detail:sys):
-        super._init(error_message)
+        super()._init(error_message)
         self.error_message = error_message_detail(error_message, error_detail = error_detail)
 
     def _self_(self):
         return self.error_message
-    
-if __name__ == "__main__":
-    try:
-        a=1/0
-    
-    except Exception as e:
-        logging.info("Divide by Zero Error")
-        raise CustomException(e)
 
         
         
